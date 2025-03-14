@@ -11,10 +11,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score, davies_bouldin_score
 import os
 
+# Trouver le chemin absolu du fichier en fonction du répertoire actuel
+chemin_data = os.path.join(os.path.dirname(__file__), '../data/marketing_campaign.csv')
+
+print(chemin_data)
+
 # Chargement des données
 @st.cache_data
 def load_data():
-    file_path = "../data/marketing_campaign.csv"
+    file_path = chemin_data
     df = pd.read_csv(file_path, sep=';')
     
     # Nettoyage des données
