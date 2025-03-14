@@ -85,7 +85,8 @@ option = st.sidebar.selectbox("Sélectionner une analyse", [
     #"Détection des valeurs aberrantes", 
     "Segmentation des clients", 
     "Visualisation des Clusters", 
-    "Évaluation des Modèles", 
+    "Évaluation des Modèles",
+    "Réduction de dimensions", 
     "Conclusion"
 ])
 
@@ -184,7 +185,7 @@ elif option == "Visualisation des Clusters":
     plot_clusters(df, "DBSCAN_Cluster", "Clusters avec DBSCAN")
     plot_clusters(df, "Agglo_Cluster", "Clusters avec Clustering Hiérarchique")
 
-    
+elif option == "Réduction de dimensions":
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.scatterplot(x=df["PCA_1"],y=df["PCA_2"], hue=df["Agglo_Cluster"], palette="coolwarm",alpha=0.7)
     ax.set_title("Visualisation des Clusters avec ACP (PCA)")
